@@ -2,9 +2,12 @@
   <div class="keyboard-row" *ngFor="let row of keyboardLayout">
     <button
       *ngFor="let key of row"
-      (click)="onKeyClick(key)"
+      (click)="onKeyClick(key.key)"
     >
-      {{ key }}
+   <div class="keys">
+    <p *ngIf="key.shift !== undefined">    {{ key.shift }}</p>
+    <strong>{{ key.key }}</strong>
+   </div>
     </button>
   </div>
 </div>

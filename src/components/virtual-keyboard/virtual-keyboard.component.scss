@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  flex: 1;
+}
+.keyboard-row {
+  display: flex;
+max-width: 600px;
+margin: 0 auto;
+justify-content: space-between;
+}
+.keys {
+  flex: 1 !important;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  button {
+    padding: 0;
+    flex: 1 !important;
+  }
+  p {
+  }
+}
