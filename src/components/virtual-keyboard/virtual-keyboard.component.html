@@ -2,12 +2,14 @@
   <div class="keyboard-row" *ngFor="let row of keyboardLayout">
     <button
       *ngFor="let key of row"
-      (click)="onKeyClick(key.key)"
+      (click)="onKeyClick(key.key, key.shift)"
     >
-   <div class="keys">
-    <p *ngIf="key.shift !== undefined">    {{ key.shift }}</p>
-    <strong>{{ key.key }}</strong>
-   </div>
+    <div [ngClass]="{'btn': isShiftOn && key.key === 'Shift' || isCapsLocksOn && key.key === 'Caps Lock'}">
+      <div class="keys">
+        <span *ngIf="key.shift !== undefined">{{ key.shift }}</span>
+        <strong>{{ key.key }}</strong>
+       </div>
+    </div>
     </button>
   </div>
 </div>
